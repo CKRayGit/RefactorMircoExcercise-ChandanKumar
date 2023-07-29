@@ -1,0 +1,22 @@
+using System;
+
+namespace TDDMicroExercises.TelemetrySystem
+{
+	public class ITelemetryClient
+	{
+        
+		bool OnlineStatus
+		{
+			get;
+		}
+
+		void Connect(string telemetryServerConnectionString);
+
+		void Disconnect();
+		
+		void Send(string message);
+		
+		string Receive();
+		
+	}
+}
