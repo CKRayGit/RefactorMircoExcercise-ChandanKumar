@@ -1,21 +1,25 @@
-﻿namespace TDDMicroExercises.TelemetrySystem.SomeDependencies
+using TDDMicroExercises.TelemetrySystem;
+
+namespace TDDMicroExercises.TelemetrySystem.SomeDependencies
 {
     public class TelemetryClientClient
     {
+	    private ITelemetryClient _telemetryClient;
 		// A class with the only goal of simulating a dependency on TelemetryClient
 		// that has impact on the refactoring.
 
-		public TelemetryClientClient()
+		public TelemetryClientClient(ITelemetryClient telemetryClient)
         {
-            var tc = new TelemetryClient();
-            if (!tc.OnlineStatus)
-                tc.Connect("a connection string");
+		_telemetryClient = telemetryClient;	
+            //var tc = new TelemetryClient();
+            if (!_telemetryClient.OnlineStatus)
+                _telemetryClient.Connect("a connection string");
 
-            tc.Send("some message");
+            _telemetryClient.Send("some message");
 
-            var response = tc.Receive();
+            var response = _telemetryClient.Receive();
 
-            tc.Disconnect();
+            _telemetryClient.Disconnect();
 
         }
     }
