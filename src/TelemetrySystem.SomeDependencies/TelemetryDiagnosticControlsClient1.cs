@@ -9,7 +9,7 @@ namespace TDDMicroExercises.TelemetrySystem.SomeDependencies
 	public TelemetryDiagnosticControlsClient1(TelemetryDiagnosticControlsUtils telemetryDiagnosticControlsUtils)
 	{
 		_telemetryDiagnosticControlsUtils = telemetryDiagnosticControlsUtils;
-    		var result = _telemetryDiagnosticControlsUtils.GetDiagnosticInfo;
+    		var result = _telemetryDiagnosticControlsUtils.GetDiagnosticInfo();
 	}
     }
 }
