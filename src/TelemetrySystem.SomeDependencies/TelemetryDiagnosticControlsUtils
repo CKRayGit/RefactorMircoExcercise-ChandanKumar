@@ -1,0 +1,24 @@
+﻿using System;
+using TDDMicroExercises.TelemetrySystem;
+
+namespace TDDMicroExercises.TelemetrySystem.SomeDependencies
+{
+    public class TelemetryDiagnosticControlsUtils
+    {
+		// A class with the only goal of simulating a dependency on TelemetryDiagnosticControls
+		// that has impact on the refactoring.
+    private ITelemetryDiagnosticControls _telemetryDiagnosticControls;
+
+		public TelemetryDiagnosticControlsUtils(ITelemetryDiagnosticControls telemetryDiagnosticControls)
+        {
+          _telemetryDiagnosticControls = telemetryDiagnosticControls;
+        }
+
+        public string GetDiagnosticInfo()
+        {
+            _telemetryDiagnosticControls.CheckTransmission();
+            return _telemetryDiagnosticControls.DiagnosticInfo;
+        }
+
+    }
+}
