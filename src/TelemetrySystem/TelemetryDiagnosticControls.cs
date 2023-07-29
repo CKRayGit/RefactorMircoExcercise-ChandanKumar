@@ -3,7 +3,7 @@ using System;
 
 namespace TDDMicroExercises.TelemetrySystem
 {
-    public class TelemetryDiagnosticControls
+    public class TelemetryDiagnosticControls : ITelemetryDiagnosticControls
     {
         private const string DiagnosticChannelConnectionString = "*111#";
         
